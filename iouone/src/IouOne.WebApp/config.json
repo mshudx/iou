@@ -1,6 +1,8 @@
 {
   "AppSettings": {
-    "SiteTitle": "IouOne.WebApp"
+    "SiteTitle": "IouOne.WebApp",
+    "DocumentDbUri": "https://iou.documents.azure.com:443/",
+    "DocumentDbKey": "V5geHRXIydg2xP1ztQA3+xTreUkAb0TN9UjdQmuCNfbM9EvOq20qzCCOf7lcFrQzJQmqEwpNBGW2lYTrlgBD3g=="
   },
   "Data": {
     "DefaultConnection": {
