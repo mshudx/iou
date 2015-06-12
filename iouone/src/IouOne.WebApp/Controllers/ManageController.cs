@@ -9,21 +9,22 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Mvc;
 using IouOne.WebApp;
 using IouOne.WebApp.Models;
+using Mshudx.AspNet.Identity.DocumentDb;
 
 namespace IouOne.WebApp.Controllers
 {
     [Authorize]
     public class ManageController : Controller
     {
-        public ManageController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public ManageController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
 
-        public UserManager<ApplicationUser> UserManager { get; private set; }
+        public UserManager<IdentityUser> UserManager { get; private set; }
 
-        public SignInManager<ApplicationUser> SignInManager { get; private set; }
+        public SignInManager<IdentityUser> SignInManager { get; private set; }
 
         //
         // GET: /Account/Index
@@ -344,7 +345,7 @@ namespace IouOne.WebApp.Controllers
             Error
         }
 
-        private async Task<ApplicationUser> GetCurrentUserAsync()
+        private async Task<IdentityUser> GetCurrentUserAsync()
         {
             return await UserManager.FindByIdAsync(Context.User.GetUserId());
         }
