@@ -2,7 +2,6 @@
     "webroot": "wwwroot",
     "userSecretsId": "aspnet5-IouOne.WebApp-b6af896c-97ca-49de-8c67-054edaa6aa2d",
     "version": "1.0.0-*",
-
     "dependencies": {
         "Microsoft.AspNet.Mvc": "6.0.0-beta4",
         "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta4",
@@ -23,7 +22,8 @@
         "Microsoft.Framework.Logging": "1.0.0-beta4",
         "Microsoft.Framework.Logging.Console": "1.0.0-beta4",
         "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta4",
-        "Mshudx.AspNet.Identity.DocumentDb": "1.0.0-*"
+        "Mshudx.AspNet.Identity.DocumentDb": "1.0.0-*",
+        "Microsoft.Azure.DocumentDB": "1.1.0"
     },
 
     "commands": {
@@ -35,7 +35,6 @@
     "frameworks": {
         "dnx451": { }
     },
-
     "exclude": [
         "wwwroot",
         "node_modules",

@@ -22,7 +22,8 @@
       "Microsoft.Framework.Logging >= 1.0.0-beta4",
       "Microsoft.Framework.Logging.Console >= 1.0.0-beta4",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-beta4",
-      "Mshudx.AspNet.Identity.DocumentDb >= 1.0.0-*"
+      "Mshudx.AspNet.Identity.DocumentDb >= 1.0.0-*",
+      "Microsoft.Azure.DocumentDB >= 1.1.0"
     ],
     "DNX,Version=v4.5.1": []
   },
