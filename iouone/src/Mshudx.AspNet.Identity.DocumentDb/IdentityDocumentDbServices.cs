@@ -17,7 +17,9 @@ namespace Mshudx.AspNet.Identity.DocumentDb
             services.AddScoped(
                 typeof(IUserStore<IdentityUser>),
                 sp => new UserStore(endPoint, authKey, databaseName, collectionName));
-
+            services.AddScoped(
+                typeof (IRoleStore<IdentityRole>),
+                sp => new RoleStore());
             return services;
         }
     }

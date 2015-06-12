@@ -286,7 +286,7 @@ function(logins, providerKey, loginProvider) {
             cancellationToken.ThrowIfCancellationRequested();
             ThrowIfDisposed();
             return Task.FromResult(
-                Users.FirstOrDefault(u => u.Id == userId));
+                Users.Where(u => u.Id == userId).AsEnumerable().FirstOrDefault());
         }
 
         public virtual Task<TUser> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken = default(CancellationToken))
@@ -294,7 +294,7 @@ function(logins, providerKey, loginProvider) {
             cancellationToken.ThrowIfCancellationRequested();
             ThrowIfDisposed();
             return Task.FromResult(
-                Users.FirstOrDefault(u => u.NormalizedUserName == normalizedUserName));
+                Users.Where(u => u.NormalizedUserName == normalizedUserName).AsEnumerable().FirstOrDefault());
         }
 
         public IQueryable<TUser> Users

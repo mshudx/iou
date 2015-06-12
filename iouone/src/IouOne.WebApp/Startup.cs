@@ -53,7 +53,11 @@ namespace IouOne.WebApp
 
             // Add Identity services to the services container.
             services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddDocumentDbStores(new Uri(""), "", "" , "users")
+                .AddDocumentDbStores(
+                    new Uri(Configuration.GetSubKey("AppSettings").Get("DocumentDbUri")),
+                    Configuration.GetSubKey("AppSettings").Get("DocumentDbKey"),
+                    "iou", 
+                    "users")
                 .AddDefaultTokenProviders();
 
             // Configure the options for the authentication middleware.
