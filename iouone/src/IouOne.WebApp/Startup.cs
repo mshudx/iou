@@ -56,7 +56,7 @@ namespace IouOne.WebApp
                 .AddDocumentDbStores(
                     new Uri(Configuration.GetSubKey("AppSettings").Get("DocumentDbUri")),
                     Configuration.GetSubKey("AppSettings").Get("DocumentDbKey"),
-                    "iou", 
+                    "iou",
                     "users")
                 .AddDefaultTokenProviders();
 

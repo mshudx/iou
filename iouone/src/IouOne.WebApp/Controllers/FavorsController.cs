@@ -14,7 +14,7 @@ namespace IouOne.WebApp.Controllers
     [Route("api/[controller]")]
     public class FavorsController : Controller
     {
-        private static DocumentClient client = new DocumentClient(
+        private static readonly DocumentClient client = new DocumentClient(
                 new Uri(ConfigurationManager.AppSettings["DocumentDbUri"]),
                 ConfigurationManager.AppSettings["DocumentDbKey"]);
         private static Database iouDatabase;
@@ -24,7 +24,7 @@ namespace IouOne.WebApp.Controllers
         {
             if (iouDatabase == null)
             {
-                var iouDatabase = client
+                iouDatabase = client
                     .CreateDatabaseQuery()
                     .Where(db => db.Id == "iou")
                     .AsEnumerable()
@@ -42,7 +42,7 @@ namespace IouOne.WebApp.Controllers
 
             if (favorsDocumentCollection == null)
             {
-                var favorsDocumentCollection = client
+                favorsDocumentCollection = client
                     .CreateDocumentCollectionQuery(iouDatabase.CollectionsLink)
                     .Where(c => c.Id == "favors")
                     .AsEnumerable()
