@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "IouOne.WebApp"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-IouOne.WebApp-b6af896c-97ca-49de-8c67-054edaa6aa2d;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
